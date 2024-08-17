@@ -1,0 +1,10 @@
+# Ignore CLion files
+.idea
+
+# Ignore vscode files
+.vscode
+
+# Ignore build folders
+cmake-build-debug
+cmake-build-release
+build
