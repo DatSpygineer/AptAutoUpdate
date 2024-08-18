@@ -89,6 +89,8 @@ static bool run_update() {
 
 		if (update_count == 0) {
 			puts("\x1B[32;1mEverything is up to date!\x1B[0m");
+			puts("Press any key...");
+			getchar();
 			return true;
 		}
 
@@ -103,6 +105,10 @@ static bool run_update() {
 		puts("\x1B[31;1mFailed to run command \"apt list --upgradable\"!\x1B[0m");
 		return false;
 	}
+
+	puts("\x1B[32;1mUpdate finished!\x1B[0m");
+	puts("Press any key...");
+	getchar();
 	return true;
 }
 
