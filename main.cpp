@@ -89,8 +89,6 @@ static bool run_update() {
 
 		if (update_count == 0) {
 			puts("\x1B[32;1mEverything is up to date!\x1B[0m");
-			puts("Press any key...");
-			getchar();
 			return true;
 		}
 
@@ -107,8 +105,6 @@ static bool run_update() {
 	}
 
 	puts("\x1B[32;1mUpdate finished!\x1B[0m");
-	puts("Press any key...");
-	getchar();
 	return true;
 }
 
@@ -148,6 +144,9 @@ END:
 		// Reset terminal and file descriptor settings
 		fcntl(STDIN_FILENO, F_SETFL, stdin_flags);
 		tcsetattr(STDIN_FILENO, TCSANOW, &old_settings);
+
+		puts("Press any key...");
+		getchar();
 		return result;
 	}
 }
